@@ -18,8 +18,7 @@ import javax.sound.sampled.Clip
 
 var storeStatusGlobal = mutableStateOf(Store.availableStores.map { it to false }.toMutableList())
 
-fun main() = Window(title = "Playstation Notifier", size = IntSize(800, 200 + Store.availableStores.count() * 50)) {
-
+fun main() = Window(title = "Playstation 5 Notifier", size = IntSize(800, 200 + Store.availableStores.count() * 50)) {
 	val lastUpdatedAt = remember { mutableStateOf(Calendar.getInstance()) }
 	val storeStatus = remember { mutableStateOf(Store.availableStores.map { it to false }.toMutableList()) }
 	storeStatusGlobal = storeStatus
@@ -53,6 +52,7 @@ fun main() = Window(title = "Playstation Notifier", size = IntSize(800, 200 + St
 				onClick = {
 					// Recheck
 					updateAll()
+					lastUpdatedAt.value = Calendar.getInstance()
 				}) {
 				Text("Recheck all")
 			}

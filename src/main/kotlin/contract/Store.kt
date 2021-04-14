@@ -16,10 +16,8 @@ abstract class Store {
 		fun create(
 			aClass: Class<*>
 		): Store? {
-			val field: Store
 			return try {
-				field = aClass.newInstance() as Store
-				field
+				aClass.getDeclaredConstructor().newInstance() as Store
 			} catch (e: InstantiationException) {
 				null
 			} catch (e: IllegalAccessException) {
