@@ -3,7 +3,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -34,7 +33,7 @@ fun main() = Window(title = "Playstation Notifier", size = IntSize(800, 200 + St
 	MaterialTheme {
 		Column(Modifier.fillMaxWidth(1.0f).fillMaxHeight(8f).padding(0.dp, 50.dp), verticalArrangement = Arrangement.Top, horizontalAlignment = Alignment.CenterHorizontally) {
 			for (store in Store.availableStores) {
-				Row {
+				Row(modifier = Modifier.padding(0.dp, 12.dp)) {
 					Text(store.key, modifier = Modifier.fillMaxWidth(0.3f))
 					if ((storeStatus.value.first { it.first.key == store.key }).second) {
 						Text("Available!!!", modifier = Modifier.fillMaxWidth(0.3f), color = Color.Red)
