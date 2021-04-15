@@ -1,3 +1,4 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -29,5 +30,23 @@ dependencies {
 compose.desktop {
 	application {
 		mainClass = "MainKt"
+		nativeDistributions {
+			packageName = "Playstation 5 Notifier"
+			packageVersion = "1.0.0"
+			description = "Native App that notifies when Playstation 5 is available"
+			copyright = "2021 Saifur Rahman Mohsin. MIT License."
+
+			targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+			macOS {
+				iconFile.set(project.file("src/main/resources/icons/icon.icns"))
+			}
+			windows {
+				dirChooser = true
+				iconFile.set(project.file("src/main/resources/icons/icon.ico"))
+			}
+			linux {
+				iconFile.set(project.file("src/main/resources/icons/icon.png"))
+			}
+		}
 	}
 }
