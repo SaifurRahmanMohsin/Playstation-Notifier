@@ -1,6 +1,7 @@
 package contract
 
 import stores.AmazonIndia
+import stores.Flipkart
 import stores.PrepaidGamerCard
 import stores.RelianceDigital
 
@@ -9,7 +10,8 @@ abstract class Store {
 		val availableStores: Map<String, Class<*>> = hashMapOf(
 			"Amazon India" to AmazonIndia::class.java,
 			"Prepaidgamercard" to PrepaidGamerCard::class.java,
-			"Reliance Digital" to RelianceDigital::class.java
+			"Reliance Digital" to RelianceDigital::class.java,
+			"Flipkart" to Flipkart::class.java
 		)
 
 		/*
