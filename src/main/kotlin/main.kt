@@ -18,7 +18,7 @@ import javax.sound.sampled.Clip
 
 var storeStatusGlobal = mutableStateOf(Store.availableStores.map { it to false }.toMutableList())
 
-fun main() = Window(title = "Playstation 5 Notifier", size = IntSize(800, 200 + Store.availableStores.count() * 50)) {
+fun main() = Window(title = "Playstation 5 Notifier", size = IntSize(800, 200 + Store.availableStores.count() * 40)) {
 	val lastUpdatedAt = remember { mutableStateOf(Calendar.getInstance()) }
 	val storeStatus = remember { mutableStateOf(Store.availableStores.map { it to false }.toMutableList()) }
 	storeStatusGlobal = storeStatus
@@ -28,7 +28,7 @@ fun main() = Window(title = "Playstation 5 Notifier", size = IntSize(800, 200 + 
 			lastUpdatedAt.value = Calendar.getInstance()
 			updateAll()
 		}
-	}, 60, 60000)
+	}, 600, 60000)
 	MaterialTheme {
 		Column(Modifier.fillMaxWidth(1.0f).fillMaxHeight(8f).padding(0.dp, 50.dp), verticalArrangement = Arrangement.Top, horizontalAlignment = Alignment.CenterHorizontally) {
 			for (store in Store.availableStores) {
