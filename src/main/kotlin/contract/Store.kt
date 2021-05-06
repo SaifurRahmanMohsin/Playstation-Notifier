@@ -2,12 +2,14 @@ package contract
 
 import stores.AmazonIndia
 import stores.PrepaidGamerCard
+import stores.RelianceDigital
 
 abstract class Store {
 	companion object {
 		val availableStores: Map<String, Class<*>> = hashMapOf(
 			"Amazon India" to AmazonIndia::class.java,
-			"Prepaidgamercard" to PrepaidGamerCard::class.java
+			"Prepaidgamercard" to PrepaidGamerCard::class.java,
+			"Reliance Digital" to RelianceDigital::class.java
 		)
 
 		/*
