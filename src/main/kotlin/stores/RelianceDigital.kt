@@ -2,6 +2,7 @@ package stores
 
 import contract.Store
 import org.jsoup.Jsoup
+import java.io.IOException
 import java.lang.Exception
 import java.net.UnknownHostException
 
@@ -20,6 +21,9 @@ class RelianceDigital: Store() {
 			return false
 		} catch (ex: UnknownHostException) {
 			print("Unknown host exception")
+			false
+		} catch (ex: IOException) {
+			print("IO exception")
 			false
 		}
 	}
