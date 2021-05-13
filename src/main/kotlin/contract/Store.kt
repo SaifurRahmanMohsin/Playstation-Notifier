@@ -8,7 +8,7 @@ import stores.RelianceDigital
 abstract class Store {
 	companion object {
 		val availableStores: LinkedHashMap<String, Class<*>> = linkedMapOf(
-			"Amazon India" to AmazonIndia::class.java,
+//			"Amazon India" to AmazonIndia::class.java,
 			"Prepaidgamercard" to PrepaidGamerCard::class.java,
 			"Reliance Digital" to RelianceDigital::class.java,
 			"Flipkart" to Flipkart::class.java
