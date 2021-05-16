@@ -1,5 +1,7 @@
 # Playstation 5 Notifier
 
+**This project is now shelved since most of the retailers have announced pre-booking on 17th at noon.**
+
 Made this fun project over the weekend because I was tired of refreshing the Amazon page hoping for the Playstation 5 to launch so I can get it.
 
 ![Screenshot](https://i.imgur.com/Y90Kg3j.png)
